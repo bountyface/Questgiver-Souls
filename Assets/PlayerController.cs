@@ -51,11 +51,11 @@ public class PlayerController : MonoBehaviour
                 {
                     success = TryMove(new Vector2(0, movementInput.y));
                 }
-                animator.SetBool("isMoving", success);
+                // animator.SetBool("isMoving", success);
             }
             else
             {
-                animator.SetBool("isMoving", false);
+                // animator.SetBool("isMoving", false);
 
             }
 
@@ -107,7 +107,7 @@ public class PlayerController : MonoBehaviour
     void OnFire()
     {
         print("Fire pressed!");
-        animator.SetTrigger("swordAttack");
+        // animator.SetTrigger("swordAttack");
     }
 
 
@@ -137,5 +137,17 @@ public class PlayerController : MonoBehaviour
     public void UnlockMovement()
     {
         canMove = true;
+    }
+
+    public void OnTriggerExit2D(Collider2D collision)
+    {
+        // print("Trigger Exit");
+        if (collision.gameObject.CompareTag("Boundary"))
+        {
+            print("Boundary");
+            transform.localPosition = new Vector3(0, 0, 0);
+            // Handle collision with the boundary here
+            // For example, you can reset the player's position or apply some other behavior
+        }
     }
 }
