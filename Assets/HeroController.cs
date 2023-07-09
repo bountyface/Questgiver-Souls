@@ -10,6 +10,8 @@ public class HeroController : MonoBehaviour
     public Transform destination;
     public float movementSpeed = 2f;
 
+    public float rotationSpeed;
+
     public GameObject DialogueGameObject;
     public Dialogue Dialogue;
 
@@ -28,7 +30,6 @@ public class HeroController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        // MoveToEndPoint();
         if (allowMoving || Dialogue.dialogueHasEnded)
         {
             if (Dialogue.dialogueHasEnded)
@@ -45,9 +46,9 @@ public class HeroController : MonoBehaviour
 
     void MoveToStartPoint()
     {
-        transform.eulerAngles = new Vector3(0, 180, 0);
+
+        transform.rotation = Quaternion.Euler(0, 0, Time.time * -rotationSpeed);
         transform.position = Vector3.Lerp(transform.position, destination.position, Time.deltaTime * movementSpeed);
-        // wild rotation
         var dist = Vector3.Distance(transform.position, destination.position);
         if (dist <= 1)
         {

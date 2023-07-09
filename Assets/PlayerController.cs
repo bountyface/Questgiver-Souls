@@ -138,16 +138,4 @@ public class PlayerController : MonoBehaviour
     {
         canMove = true;
     }
-
-    public void OnTriggerExit2D(Collider2D collision)
-    {
-        // print("Trigger Exit");
-        if (collision.gameObject.CompareTag("Boundary"))
-        {
-            print("Boundary");
-            transform.localPosition = new Vector3(0, 0, 0);
-            // Handle collision with the boundary here
-            // For example, you can reset the player's position or apply some other behavior
-        }
-    }
 }

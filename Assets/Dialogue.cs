@@ -61,7 +61,6 @@ public class Dialogue : MonoBehaviour
         else
         {
             dialogueHasEnded = true;
-            print(dialogueHasEnded);
             gameObject.SetActive(false);
         }
     }
