@@ -10,7 +10,11 @@ public class HeroController : MonoBehaviour
     public Transform destination;
     public float movementSpeed = 2f;
 
+    public GameObject DialogueBox;
+
     private float t = 0f;
+
+    public bool allowMoving = true;
 
     // Start is called before the first frame update
     void Start()
@@ -24,21 +28,30 @@ public class HeroController : MonoBehaviour
     void FixedUpdate()
     {
         // MoveToEndPoint();
-        transform.position = Vector3.Lerp(transform.position, destination.position, Time.deltaTime * movementSpeed);
-        var dist = Vector3.Distance(transform.position, destination.position);
-        print(dist);
-        if (dist <= 1)
+        if (allowMoving)
         {
-            // Changes position
-            if (destination == startPoint)
+
+
+            transform.position = Vector3.Lerp(transform.position, destination.position, Time.deltaTime * movementSpeed);
+            var dist = Vector3.Distance(transform.position, destination.position);
+            print(dist);
+            if (dist <= 1)
             {
-                destination = endPoint;
-                transform.eulerAngles = new Vector3(0, 0, 0);
-            }
-            else
-            {
-                destination = startPoint;
-                transform.eulerAngles = new Vector3(0, 180, 0);
+                allowMoving = false;
+                animator.SetBool("isWalking", allowMoving);
+                DialogueBox.SetActive(true);
+                // Changes position
+                if (destination == startPoint)
+                {
+                    destination = endPoint;
+                    transform.eulerAngles = new Vector3(0, 0, 0);
+                }
+                else
+                {
+                    destination = startPoint;
+                    transform.eulerAngles = new Vector3(0, 180, 0);
+                }
+
             }
         }
     }
