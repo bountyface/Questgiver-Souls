@@ -106,7 +106,7 @@ public class PlayerController : MonoBehaviour
 
     void OnFire()
     {
-        print("Fire pressed!");
+        // print("Fire pressed!");
         // animator.SetTrigger("swordAttack");
     }
 

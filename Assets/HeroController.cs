@@ -10,7 +10,8 @@ public class HeroController : MonoBehaviour
     public Transform destination;
     public float movementSpeed = 2f;
 
-    public GameObject DialogueBox;
+    public GameObject DialogueGameObject;
+    public Dialogue Dialogue;
 
     private float t = 0f;
 
@@ -28,58 +29,47 @@ public class HeroController : MonoBehaviour
     void FixedUpdate()
     {
         // MoveToEndPoint();
-        if (allowMoving)
+        if (allowMoving || Dialogue.dialogueHasEnded)
         {
-
-
-            transform.position = Vector3.Lerp(transform.position, destination.position, Time.deltaTime * movementSpeed);
-            var dist = Vector3.Distance(transform.position, destination.position);
-            print(dist);
-            if (dist <= 1)
+            if (Dialogue.dialogueHasEnded)
             {
-                allowMoving = false;
-                animator.SetBool("isWalking", allowMoving);
-                DialogueBox.SetActive(true);
-                // Changes position
-                if (destination == startPoint)
-                {
-                    destination = endPoint;
-                    transform.eulerAngles = new Vector3(0, 0, 0);
-                }
-                else
-                {
-                    destination = startPoint;
-                    transform.eulerAngles = new Vector3(0, 180, 0);
-                }
-
+                MoveToStartPoint();
             }
+            else
+            {
+                MoveToConversationSpot();
+            }
+
         }
     }
 
     void MoveToStartPoint()
     {
-        animator.SetBool("isWalking", true);
-        // Move the NPC from start to end point
-        t += Time.deltaTime * movementSpeed;
-        transform.position = Vector3.Lerp(transform.position, startPoint.position, t);
-    }
-    void MoveToEndPoint()
-    {
-        animator.SetBool("isWalking", true);
-        // Move the NPC from start to end point
-        t += Time.deltaTime * movementSpeed;
-        transform.position = Vector3.Lerp(startPoint.position, endPoint.position, t);
-
-    }
-    public void OnTriggerEnter2D(Collider2D collision)
-    {
-        Debug.Log("Trigger");
-        if (collision.gameObject.CompareTag("Conversation Spot"))
+        transform.eulerAngles = new Vector3(0, 180, 0);
+        transform.position = Vector3.Lerp(transform.position, destination.position, Time.deltaTime * movementSpeed);
+        // wild rotation
+        var dist = Vector3.Distance(transform.position, destination.position);
+        if (dist <= 1)
         {
-            print("Conversation Spot");
-            // MoveToStartPoint();
-            // Handle collision with the boundary here
-            // For example, you can reset the player's position or apply some other behavior
+            allowMoving = false;
+            animator.SetBool("isRolling", true);
+            destination = startPoint;
         }
+    }
+    void MoveToConversationSpot()
+    {
+        transform.position = Vector3.Lerp(transform.position, destination.position, Time.deltaTime * movementSpeed);
+        transform.eulerAngles = new Vector3(0, 0, 0);
+        var dist = Vector3.Distance(transform.position, destination.position);
+        if (dist <= 1)
+        {
+            allowMoving = false;
+            animator.SetBool("isWalking", false);
+            DialogueGameObject.SetActive(true);
+            destination = endPoint;
+
+
+        }
+
     }
 }

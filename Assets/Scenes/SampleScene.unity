@@ -4573,7 +4573,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1380423255
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4650,7 +4650,9 @@ MonoBehaviour:
   - 'Questgiver: Hello traveller who happens to be the chosen one. You have to save
     the world from evil...'
   - ...and only I, the Questgiver, can show you how.
+  - Go to the Mines of The Dead and collect me one rock.
   textSpeed: 0.05
+  dialogueHasEnded: 0
 --- !u!1 &1480011675
 GameObject:
   m_ObjectHideFlags: 0
@@ -5181,6 +5183,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4096631181953795714, guid: 4c1203b79d451f4479bfacae922d7099, type: 3}
+      propertyPath: Dialogue
+      value: 
+      objectReference: {fileID: 1380423258}
+    - target: {fileID: 4096631181953795714, guid: 4c1203b79d451f4479bfacae922d7099, type: 3}
       propertyPath: endPoint
       value: 
       objectReference: {fileID: 1367789429}
@@ -5200,6 +5206,10 @@ PrefabInstance:
       propertyPath: movementSpeed
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4096631181953795714, guid: 4c1203b79d451f4479bfacae922d7099, type: 3}
+      propertyPath: DialogueGameObject
+      value: 
+      objectReference: {fileID: 1380423254}
     - target: {fileID: 6912649016306114868, guid: 4c1203b79d451f4479bfacae922d7099, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -5247,43 +5257,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 418801995734862617, guid: 4c1203b79d451f4479bfacae922d7099, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2228413217487181069}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c1203b79d451f4479bfacae922d7099, type: 3}
---- !u!1 &2228413217487181063 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 418801995734862617, guid: 4c1203b79d451f4479bfacae922d7099, type: 3}
-  m_PrefabInstance: {fileID: 2228413217487181062}
-  m_PrefabAsset: {fileID: 0}
---- !u!50 &2228413217487181069
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2228413217487181063}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1001 &3979220750561779626
 PrefabInstance:
   m_ObjectHideFlags: 0
