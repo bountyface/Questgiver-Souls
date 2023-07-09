@@ -743,13 +743,14 @@ MonoBehaviour:
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
+  m_fontSharedMaterials:
+  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4292999167
+  m_fontColor: {r: 1, g: 0.96861684, b: 0.8820755, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -4606,16 +4607,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: a384b583426023d4da68d3f25e868451, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -4646,10 +4647,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textComponent: {fileID: 691566891}
   lines:
-  - Hello traveller who happens to be the chosen one. You have to save the world
-    from evil...
+  - 'Questgiver: Hello traveller who happens to be the chosen one. You have to save
+    the world from evil...'
   - ...and only I, the Questgiver, can show you how.
-  textSpeed: 0.3
+  textSpeed: 0.05
 --- !u!1 &1480011675
 GameObject:
   m_ObjectHideFlags: 0
@@ -5187,6 +5188,10 @@ PrefabInstance:
       propertyPath: startPoint
       value: 
       objectReference: {fileID: 1855729502}
+    - target: {fileID: 4096631181953795714, guid: 4c1203b79d451f4479bfacae922d7099, type: 3}
+      propertyPath: DialogueBox
+      value: 
+      objectReference: {fileID: 1380423254}
     - target: {fileID: 4096631181953795714, guid: 4c1203b79d451f4479bfacae922d7099, type: 3}
       propertyPath: destination
       value: 
