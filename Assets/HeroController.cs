@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HeroController : MonoBehaviour
 {
@@ -52,10 +53,17 @@ public class HeroController : MonoBehaviour
         var dist = Vector3.Distance(transform.position, destination.position);
         if (dist <= 1)
         {
+            Invoke("ChangeScene", 3);
             allowMoving = false;
             animator.SetBool("isRolling", true);
             destination = startPoint;
         }
+
+    }
+
+    void ChangeScene()
+    {
+        SceneManager.LoadScene("Bye");
     }
     void MoveToConversationSpot()
     {
