@@ -4608,7 +4608,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 2100000, guid: a384b583426023d4da68d3f25e868451, type: 2}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4616,7 +4616,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 3
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -4650,7 +4650,7 @@ MonoBehaviour:
   - 'Questgiver: Hello traveller who happens to be the chosen one. You have to save
     the world from evil...'
   - ...and only I, the Questgiver, can show you how.
-  - Go to the Mines of The Dead and collect me one rock.
+  - Go to the Mines of The Dead and collect one rock.
   textSpeed: 0.05
   dialogueHasEnded: 0
 --- !u!1 &1480011675
