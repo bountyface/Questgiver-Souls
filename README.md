@@ -1,5 +1,6 @@
 # Questgiver-Souls
 This game was part of the 48 hour game jam by GMTK: https://itch.io/jam/gmtk-2023/rate/2162048
+![grafik](https://github.com/bountyface/Questgiver-Souls/assets/35427369/467938af-df26-4c06-9bd6-a593b17ec62e)
 
 The idea: You play as the quest giver and help the hero save the world by guiding him in the right direction.
 
